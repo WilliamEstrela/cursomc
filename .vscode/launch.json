@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CursomcApplication",
+            "request": "launch",
+            "mainClass": "com.nelioalves.cursomc.CursomcApplication",
+            "projectName": "cursomc"
+        }
+    ]
+}

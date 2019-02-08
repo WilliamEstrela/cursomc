@@ -1,9 +1,9 @@
 package com.nelioalves.cursomc.domain;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 public class Endereco {
@@ -18,6 +18,7 @@ public class Endereco {
     private String bairro;
     private String cep;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="cliente_id")
     private Cliente cliente;

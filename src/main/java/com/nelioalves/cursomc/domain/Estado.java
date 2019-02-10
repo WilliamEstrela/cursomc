@@ -1,6 +1,8 @@
 package com.nelioalves.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class Estado implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
+
 
 	@JsonIgnore
 	@OneToMany(mappedBy="estado")

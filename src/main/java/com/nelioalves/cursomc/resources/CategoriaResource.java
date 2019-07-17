@@ -3,7 +3,9 @@ package com.nelioalves.cursomc.resources;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.nelioalves.cursomc.dto.CategoriaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,4 +48,12 @@ public class CategoriaResource {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<List<CategoriaDTO>> findAll() {
+		List<Categoria> list = service.findAll();
+		List<CategoriaDTO> categoria = list.stream().map(CategoriaDTO::new).collect(Collectors.toList());
+		return ResponseEntity.ok().body(categoria);
+
+	}
 }

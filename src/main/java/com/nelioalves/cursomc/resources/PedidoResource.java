@@ -1,8 +1,6 @@
 package com.nelioalves.cursomc.resources;
 
-import com.nelioalves.cursomc.domain.Categoria;
 import com.nelioalves.cursomc.domain.Pedido;
-import com.nelioalves.cursomc.services.CategoriaService;
 import com.nelioalves.cursomc.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

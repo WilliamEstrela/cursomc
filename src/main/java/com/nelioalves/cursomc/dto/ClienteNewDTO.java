@@ -1,20 +1,42 @@
 package com.nelioalves.cursomc.dto;
 
+import com.nelioalves.cursomc.services.validation.ClienteInsert;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+@ClienteInsert
 public class ClienteNewDTO {
     private static final long serialVersionUID = 1L;
 
+    @NotEmpty(message="O nome não pode ser vazio")
+    @Length(min=5, max=80, message = "O tamanho tem que ser entre 5 e 80 caracteres")
     private String nome;
+
+    @NotEmpty(message="Preenchimento obrigatorio")
+    @Email(message="Email inválido")
     private String email;
+
+    @NotEmpty(message="Preenchimento obrigatorio")
     private String cpfOuCnpj;
+
     private Integer tipo;
 
+    @NotEmpty(message="Preenchimento obrigatorio")
     private String logradouro;
+
     private String numero;
+
+    @NotEmpty(message="Preenchimento obrigatorio")
     private String complemento;
+
     private String bairro;
     private String cep;
 
+    @NotEmpty(message="Preenchimento obrigatorio")
     private String telefone1;
+
     private String telefone2;
     private String telefone3;
 
